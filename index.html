@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Form error validations</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+     <div id="mainContainer">
+        <div id="heading">
+            <h1>Fuel Your Brand's Goals with <span class="beyond">Beyond</span></h1>
+            <p>You will get a response within 24 hours.We will explain in details how we can help you
+            fuel and grow your brand within the stated budget.
+            </p>
+        </div>
+        
+            <form action="" id="myForm">
+            <label for="">Name</label>
+            <input  type="text" id="name">
+            <p id="nameError" class="error" class="error"></p>
+             <label for="">Email address</label>
+            <input type="email" id="mail">
+            <p id="mailError" class="error"></p>
+             <label for="">Phone number</label>
+            <input type="number" id="phNumber">
+            <p id="phNumberError" class="error"></p>
+             <label for="">Budget</label>
+            <input type="number" id="budget">
+            <p id="budgetError" class="error"></p>
+             <label for="">Goals</label>
+            <input type="text" id="goals">
+            <p id="goalsError" class="error"></p>
+             <button type="submit">Send Enquiry <span>&rightarrow;</span></button>
+            
+             </form>
+             <div id="popUp">
+                <p class="popUp-para">Form Successfully Submited</p>
+                <!-- <button class="popUp-button" onclick="closepopup()">ok</button> -->
+             </div>
+    </div>
+    <script src="script.js"></script> 
+    </body>
+</html>
