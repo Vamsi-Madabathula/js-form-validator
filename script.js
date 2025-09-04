@@ -10,6 +10,31 @@ const budgerError = document.getElementById('budgetError')
 const goalsInput = document.getElementById('goals');
 const goalsError = document.getElementById('goalsError')
 const popUp =document.getElementById('popUp')
+ nameInput.addEventListener("input",function(){
+        if(/\d/.test(nameInput.value)){
+          nameError.textContent = "Number are not allowed";
+          nameInput.classList.add("error-border")
+        }
+        else{
+          nameError.textContent="";
+          nameInput.classList.remove("error-border")
+        }
+      })
+phNumberInput.addEventListener("input",function(){allowNumbersValidation(phNumberInput,phNumberError);})
+budgerInput.addEventListener("input",function(){allowNumbersValidation(budgerInput,budgerError);})
+
+// this is reusable function... used for only nubers are allowed.
+function allowNumbersValidation(input,errorText){
+  if(!/^\d*$/.test(input.value)){
+    errorText.textContent = "Strings are not allowed";
+    input.classList.add('error-border');
+  }
+  else{
+   errorText.textContent="";
+   input.classList.remove('error-border')
+  }
+}
+
 
  form.addEventListener('submit',function(e){
       e.preventDefault();  
@@ -39,14 +64,15 @@ const popUp =document.getElementById('popUp')
         mailError.textContent = "Mail is required";
         mailInput.classList.add("error-border")
         valid =false;
+      
       }
-    //   }else if(/\s+@\s+\.\s/.test(mailInput.value))
-    //   {
-    //     mailError.textContent="Invalid mail"
-    //     mailInput.classList.add("error-border");
-    //     valid= false;
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mailInput.value))
+      {
+        mailError.textContent="Invalid mail"
+        mailInput.classList.add("error-border");
+        valid= false;
         
-    //   }
+      }
       if(phNumberInput.value.trim() === ""){
         phNumberError.textContent = "Phone Number is requied";
         phNumberInput.classList.add('error-border')
@@ -72,9 +98,10 @@ const popUp =document.getElementById('popUp')
 
       if(valid)
       {
+        // alert('form submited successfully');
          popUp.classList.add("show"); // show popup
       }
-    //    function closepopup(){
-    //     popUp.classList.remove('show')
-    //    }
+      //  function closepopup(){
+      //   popUp.classList.remove('show')
+      //  }
  })

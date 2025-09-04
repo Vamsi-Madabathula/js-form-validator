@@ -77,9 +77,9 @@ input.error-border{
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: black;
+      background: white;
       padding: 20px 40px;
-      border: 2px solid green;
+      border: 3px solid green;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
       text-align: center;
@@ -91,6 +91,6 @@ input.error-border{
     }
 .popUp-para,
  .popUp-button{
-    /* background-color: white; */
-    color: white;
+    background-color: white;
+    color: black;
 }
